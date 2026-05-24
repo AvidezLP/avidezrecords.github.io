@@ -25,61 +25,27 @@ body{
 background:
 linear-gradient(
 135deg,
-#070b1a,
-#0a1f44,
-#07101f
+#020617,
+#071b3b,
+#020617
 );
 
 min-height:100vh;
-overflow-x:hidden;
-padding:50px 20px;
-position:relative;
+
 display:flex;
 justify-content:center;
 align-items:center;
 
-}
+padding:40px 20px;
 
-/* EFECTOS */
-
-.glow1{
-
-position:absolute;
-width:500px;
-height:500px;
-border-radius:50%;
-
-background:
-radial-gradient(circle,#00a2ff55,transparent);
-
-top:-250px;
-left:-180px;
-
-filter:blur(30px);
-
-}
-
-.glow2{
-
-position:absolute;
-width:450px;
-height:450px;
-border-radius:50%;
-
-background:
-radial-gradient(circle,#ffd36944,transparent);
-
-bottom:-200px;
-right:-160px;
-
-filter:blur(30px);
+overflow-x:hidden;
 
 }
 
 .container-form{
 
 width:100%;
-max-width:950px;
+max-width:900px;
 
 background:
 rgba(255,255,255,.05);
@@ -90,19 +56,16 @@ border:1px solid rgba(255,255,255,.08);
 
 border-radius:35px;
 
-padding:50px;
-
-position:relative;
-z-index:2;
+padding:45px;
 
 box-shadow:
-0 25px 70px rgba(0,0,0,.45);
+0 25px 60px rgba(0,0,0,.45);
+
+position:relative;
 
 overflow:hidden;
 
 }
-
-/* LINEA DECORATIVA */
 
 .container-form::before{
 
@@ -114,63 +77,56 @@ top:0;
 left:0;
 
 width:100%;
-height:6px;
+height:5px;
 
 background:
 linear-gradient(
 90deg,
 #00bfff,
-#ffd369,
-#00bfff
+#ffd369
 );
 
 }
 
-/* LOGO */
-
 .logo{
 
-width:100px;
-height:100px;
+width:90px;
+height:90px;
 
 margin:auto;
 margin-bottom:25px;
 
-border-radius:30px;
+border-radius:25px;
 
 background:
 linear-gradient(
 135deg,
 #00bfff,
-#0066ff
+#005eff
 );
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-font-size:42px;
+font-size:35px;
 font-weight:900;
 
 color:white;
 
 box-shadow:
-0 15px 40px rgba(0,191,255,.35);
-
-transform:rotate(-8deg);
+0 15px 35px rgba(0,191,255,.35);
 
 }
-
-/* TITULOS */
 
 h1{
 
 text-align:center;
 
-font-size:3.2rem;
+font-size:3rem;
 font-weight:800;
 
-margin-bottom:12px;
+margin-bottom:10px;
 
 background:
 linear-gradient(
@@ -188,77 +144,58 @@ linear-gradient(
 
 text-align:center;
 
-color:#c9d9f2;
+color:#cbd5e1;
 
-font-size:1.08rem;
+margin-bottom:40px;
 
-margin-bottom:45px;
+font-size:1.05rem;
 
 }
-
-/* LABELS */
 
 .form-label{
 
-font-weight:700;
-
-margin-bottom:12px;
-
 color:#ffd369;
 
-font-size:.95rem;
+font-weight:700;
 
-letter-spacing:.5px;
+margin-bottom:10px;
 
 }
-
-/* INPUTS */
 
 .form-control{
 
 background:
-rgba(10,22,50,.95);
+rgba(2,12,30,.9);
 
 border:1px solid rgba(255,255,255,.08);
 
-border-radius:20px;
+border-radius:18px;
 
 padding:18px;
 
 color:white;
-
-font-size:1rem;
-
-transition:.3s;
 
 }
 
 .form-control:focus{
 
 background:
-rgba(10,22,50,1);
+rgba(2,12,30,1);
 
 border-color:#00bfff;
 
 color:white;
 
 box-shadow:
-0 0 0 .25rem rgba(0,191,255,.18);
-
-transform:translateY(-2px);
+0 0 0 .2rem rgba(0,191,255,.15);
 
 }
-
-/* PLACEHOLDER */
 
 ::placeholder{
 
-color:#88a6d9;
-opacity:1;
+color:#8ba3c7 !important;
 
 }
-
-/* TEXTAREA */
 
 textarea{
 
@@ -266,28 +203,18 @@ resize:none;
 
 }
 
-/* FILE */
-
 .file-box{
 
 background:
-rgba(10,22,50,.95);
+rgba(2,12,30,.9);
 
-padding:12px;
+padding:10px;
 
-border-radius:20px;
+border-radius:18px;
 
-border:2px dashed rgba(255,211,105,.45);
-
-}
-
-input[type="file"]{
-
-color:white;
+border:2px dashed rgba(255,211,105,.35);
 
 }
-
-/* BOTON */
 
 .btn-enviar{
 
@@ -297,7 +224,7 @@ border:none;
 
 padding:18px;
 
-border-radius:20px;
+border-radius:18px;
 
 font-size:1rem;
 font-weight:800;
@@ -306,17 +233,14 @@ background:
 linear-gradient(
 135deg,
 #00bfff,
-#0066ff
+#005eff
 );
 
 color:white;
 
-margin-top:25px;
+margin-top:20px;
 
-transition:.35s;
-
-box-shadow:
-0 15px 35px rgba(0,191,255,.22);
+transition:.3s;
 
 }
 
@@ -325,11 +249,9 @@ box-shadow:
 transform:translateY(-3px);
 
 box-shadow:
-0 18px 40px rgba(0,191,255,.35);
+0 18px 40px rgba(0,191,255,.3);
 
 }
-
-/* MODAL */
 
 .modal-ok{
 
@@ -341,25 +263,23 @@ left:0;
 width:100%;
 height:100%;
 
-background:rgba(0,0,0,.65);
-
-backdrop-filter:blur(7px);
+background:rgba(0,0,0,.7);
 
 display:none;
 
 justify-content:center;
 align-items:center;
 
-z-index:9999;
-
 padding:20px;
+
+z-index:9999;
 
 }
 
 .modal-box{
 
 width:100%;
-max-width:540px;
+max-width:500px;
 
 background:
 linear-gradient(
@@ -368,55 +288,48 @@ linear-gradient(
 #0d2855
 );
 
-padding:45px;
+padding:40px;
 
-border-radius:35px;
+border-radius:30px;
 
 text-align:center;
 
-border:1px solid rgba(255,255,255,.08);
-
 box-shadow:
-0 25px 70px rgba(0,0,0,.45);
-
-animation:modal .35s ease;
+0 25px 60px rgba(0,0,0,.45);
 
 }
 
 .check{
 
-width:95px;
-height:95px;
+width:85px;
+height:85px;
 
 margin:auto;
 margin-bottom:25px;
 
-border-radius:30px;
+border-radius:25px;
 
 background:
 linear-gradient(
 135deg,
 #00bfff,
-#0066ff
+#005eff
 );
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-font-size:45px;
+font-size:40px;
 font-weight:900;
 
 color:white;
-
-box-shadow:
-0 15px 35px rgba(0,191,255,.35);
 
 }
 
 .modal-box h2{
 
-font-size:2.2rem;
+font-size:2rem;
 font-weight:800;
 
 margin-bottom:15px;
@@ -427,24 +340,22 @@ color:white;
 
 .modal-box p{
 
-color:#c7d8ef;
-
-line-height:1.7;
+color:#d4dce8;
 
 }
 
 .codigo{
 
-margin:28px 0;
+margin:25px 0;
 
-padding:24px;
+padding:20px;
 
-border-radius:24px;
+border-radius:22px;
 
 background:
 rgba(255,255,255,.04);
 
-border:2px solid rgba(255,211,105,.35);
+border:2px solid rgba(255,211,105,.3);
 
 }
 
@@ -452,9 +363,9 @@ border:2px solid rgba(255,211,105,.35);
 
 display:block;
 
-margin-bottom:12px;
+margin-bottom:10px;
 
-color:#c7d8ef;
+color:#d4dce8;
 
 }
 
@@ -465,17 +376,13 @@ font-weight:900;
 
 color:#ffd369;
 
-margin:0;
-
-word-break:break-word;
-
 }
 
 .btn-cerrar{
 
 border:none;
 
-padding:16px 35px;
+padding:15px 35px;
 
 border-radius:50px;
 
@@ -483,7 +390,7 @@ background:
 linear-gradient(
 135deg,
 #00bfff,
-#0066ff
+#005eff
 );
 
 color:white;
@@ -494,60 +401,11 @@ margin-top:15px;
 
 }
 
-/* ANIMACION */
-
-@keyframes modal{
-
-from{
-opacity:0;
-transform:translateY(30px) scale(.9);
-}
-
-to{
-opacity:1;
-transform:translateY(0) scale(1);
-}
-
-}
-
-@media(max-width:768px){
-
-.container-form{
-
-padding:30px 22px;
-
-}
-
-h1{
-
-font-size:2.4rem;
-
-}
-
-.logo{
-
-width:80px;
-height:80px;
-font-size:34px;
-
-}
-
-.modal-box{
-
-padding:35px 22px;
-
-}
-
-}
-
 </style>
 
 </head>
 
 <body>
-
-<div class="glow1"></div>
-<div class="glow2"></div>
 
 <div class="container-form">
 
@@ -591,7 +449,7 @@ Correo Electrónico
 type="email"
 name="correo"
 class="form-control"
-placeholder="Ej: juan@gmail.com"
+placeholder="Ej: correo@gmail.com"
 required
 >
 
@@ -623,7 +481,7 @@ Título del Proyecto
 type="text"
 name="titulo"
 class="form-control"
-placeholder="Ej: Página web para restaurante"
+placeholder="Ej: Página web premium"
 required
 >
 
@@ -639,7 +497,7 @@ Descripción del Proyecto
 name="descripcion"
 rows="5"
 class="form-control"
-placeholder="Explique detalladamente el proyecto..."
+placeholder="Describe tu proyecto..."
 required
 ></textarea>
 
@@ -648,7 +506,7 @@ required
 <div class="mb-4">
 
 <label class="form-label">
-Observaciones del Proyecto
+Observaciones
 </label>
 
 <textarea
@@ -679,7 +537,7 @@ required
 <div class="mb-4">
 
 <label class="form-label">
-Subir Archivo de Referencia
+Subir Archivo
 </label>
 
 <div class="file-box">
@@ -708,8 +566,6 @@ ENVIAR SOLICITUD
 </div>
 
 
-<!-- MODAL -->
-
 <div id="modalOk" class="modal-ok">
 
 <div class="modal-box">
@@ -719,11 +575,11 @@ ENVIAR SOLICITUD
 </div>
 
 <h2>
-¡Solicitud registrada!
+¡Solicitud enviada!
 </h2>
 
 <p>
-Tu solicitud fue enviada correctamente al sistema.
+Tu solicitud fue registrada correctamente.
 </p>
 
 <div class="codigo">
@@ -752,7 +608,7 @@ ENTENDIDO
 <script>
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbzkNhaJ9yzyl_PHW7r4-rRjoV2RNNHa-G70NtS3NRMHpr7o-GIFHPZCr5ITz7mcA9ox/exec";
+"https://script.google.com/macros/s/AKfycbw2FEhLrK2mogHV2TuR_XQtPVx6pic8zDBYmi9izYEvuAq7a9mkekqFvLFkmzXVy_GN/exec";
 
 const formulario =
 document.getElementById("formularioPedidos");
@@ -782,16 +638,23 @@ const fecha =
 new Date();
 
 return "SOLC-" +
+
 fecha.getFullYear() +
+
 (fecha.getMonth()+1) +
+
 fecha.getDate() +
+
 fecha.getHours() +
+
 fecha.getMinutes() +
+
 fecha.getSeconds();
 
 }
 
 formulario.addEventListener(
+
 "submit",
 
 function(e){
@@ -809,7 +672,8 @@ return;
 
 }
 
-botonEnviar.disabled = true;
+botonEnviar.disabled =
+true;
 
 botonEnviar.innerHTML =
 "ENVIANDO...";
@@ -823,39 +687,58 @@ function(){
 const base64 =
 lector.result.split(",")[1];
 
-const datos = {
+const formData =
+new FormData();
 
-nombre:
-formulario.nombre.value,
+formData.append(
+"nombre",
+formulario.nombre.value
+);
 
-correo:
-formulario.correo.value,
+formData.append(
+"correo",
+formulario.correo.value
+);
 
-telefono:
-formulario.telefono.value,
+formData.append(
+"telefono",
+formulario.telefono.value
+);
 
-titulo:
-formulario.titulo.value,
+formData.append(
+"titulo",
+formulario.titulo.value
+);
 
-descripcion:
-formulario.descripcion.value,
+formData.append(
+"descripcion",
+formulario.descripcion.value
+);
 
-obsCliente:
-formulario.obsCliente.value,
+formData.append(
+"obsCliente",
+formulario.obsCliente.value
+);
 
-monto:
-formulario.monto.value,
+formData.append(
+"monto",
+formulario.monto.value
+);
 
-qrNombre:
-archivo.name,
+formData.append(
+"qrNombre",
+archivo.name
+);
 
-qrMime:
-archivo.type,
+formData.append(
+"qrMime",
+archivo.type
+);
 
-qrBase64:
+formData.append(
+"qrBase64",
 base64
-
-};
+);
 
 fetch(
 
@@ -863,16 +746,13 @@ SCRIPT_URL,
 
 {
 method:"POST",
-
-body:new URLSearchParams(
-datos
-)
-
+body:formData,
+mode:"no-cors"
 }
 
 )
 
-.then(response => {
+.then(() => {
 
 const codigoGenerado =
 generarCodigo();
