@@ -627,28 +627,20 @@ document.getElementById("codigo");
 
 function cerrarModal(){
 
-modal.style.display =
-"none";
+modal.style.display = "none";
 
 }
 
 function generarCodigo(){
 
-const fecha =
-new Date();
+const fecha = new Date();
 
 return "SOLC-" +
-
 fecha.getFullYear() +
-
 (fecha.getMonth()+1) +
-
 fecha.getDate() +
-
 fecha.getHours() +
-
 fecha.getMinutes() +
-
 fecha.getSeconds();
 
 }
@@ -657,7 +649,7 @@ formulario.addEventListener(
 
 "submit",
 
-function(e){
+async function(e){
 
 e.preventDefault();
 
@@ -672,20 +664,15 @@ return;
 
 }
 
-botonEnviar.disabled =
-true;
+botonEnviar.disabled = true;
 
 botonEnviar.innerHTML =
 "ENVIANDO...";
 
-const lector =
-new FileReader();
-
-lector.onload =
-function(){
+try{
 
 const base64 =
-lector.result.split(",")[1];
+await convertirBase64(archivo);
 
 const formData =
 new FormData();
@@ -740,19 +727,27 @@ formData.append(
 base64
 );
 
-fetch(
+
+// =========================
+// ENVIAR A APPS SCRIPT
+// =========================
+
+const response =
+await fetch(
 
 SCRIPT_URL,
 
 {
 method:"POST",
-body:formData,
-mode:"no-cors"
+body:formData
 }
 
-)
+);
 
-.then(() => {
+
+// =========================
+// CODIGO
+// =========================
 
 const codigoGenerado =
 generarCodigo();
@@ -760,8 +755,18 @@ generarCodigo();
 codigo.innerHTML =
 codigoGenerado;
 
+
+// =========================
+// MOSTRAR MODAL
+// =========================
+
 modal.style.display =
 "flex";
+
+
+// =========================
+// WHATSAPP
+// =========================
 
 const telefono =
 formulario.telefono.value;
@@ -773,51 +778,78 @@ const mensaje =
 📌 Proyecto:
 ${formulario.titulo.value}
 
-💰 Monto:
-${formulario.monto.value} Bs.
-
 📌 Código:
 ${codigoGenerado}`;
 
-window.open(
+const whatsappURL =
 
-`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`,
+`https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
 
-"_blank"
 
-);
+// =====================
+// REDIRECCION WHATSAPP
+// =====================
+
+setTimeout(() => {
+
+window.location.href =
+whatsappURL;
+
+},500);
+
+
+// =========================
+// RESET
+// =========================
 
 formulario.reset();
 
-botonEnviar.disabled =
-false;
-
-botonEnviar.innerHTML =
-"ENVIAR SOLICITUD";
-
-})
-
-.catch(error => {
+}catch(error){
 
 console.log(error);
 
-alert("Error al enviar");
+alert(
+"Error al enviar"
+);
 
-botonEnviar.disabled =
-false;
+}
+
+botonEnviar.disabled = false;
 
 botonEnviar.innerHTML =
 "ENVIAR SOLICITUD";
-
-});
-
-};
-
-lector.readAsDataURL(archivo);
 
 }
 
 );
+
+
+// =========================
+// BASE64
+// =========================
+
+function convertirBase64(file){
+
+return new Promise((resolve,reject)=>{
+
+const reader =
+new FileReader();
+
+reader.readAsDataURL(file);
+
+reader.onload = () => {
+
+resolve(
+reader.result.split(",")[1]
+);
+
+};
+
+reader.onerror = error => reject(error);
+
+});
+
+}
 
 </script>
 
